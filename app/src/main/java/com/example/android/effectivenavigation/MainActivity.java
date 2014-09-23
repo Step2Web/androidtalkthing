@@ -134,10 +134,10 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 case 0:
                     // The first section of the app is the most interesting -- it offers
                     // a launchpad into the other demonstrations in this example application.
-                //    return new LaunchpadSectionFragment();
-                //case 1:
-                    return new RecorderSectionFragment();
+                    return new MessagesListSectionFragment();
                 case 1:
+                    return new RecorderSectionFragment();
+                case 2:
                     return new ContactListSectionFragment();
                 //default:
                 //    // The other sections of the app are dummy placeholders.
@@ -152,7 +152,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
         @Override
         public int getCount() {
-            return 2;
+            return 3;
         }
 
         @Override
@@ -213,7 +213,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             final View rootView = inflater.inflate(R.layout.fragment_section_recorder, container, false);
 
             // Demonstration of a collection-browsing activity.
-            rootView.findViewById(R.id.recorder_button)
+            /*rootView.findViewById(R.id.recorder_button)
                     .setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -221,7 +221,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                             tmp.setText(R.string.betterText);
 
                         }
-                    });
+                    });*/
             return rootView;
         }
     }
@@ -258,6 +258,25 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         }
     }
 
+    public static class MessagesListSectionFragment extends Fragment {
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            final View rootView = inflater.inflate(R.layout.fragment_section_messages, container, false);
+
+            // Demonstration of a collection-browsing activity.
+            /*rootView.findViewById(R.id.recorder_button)
+                    .setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            TextView tmp = (TextView)rootView.findViewById(R.id.recorder_text);
+                            tmp.setText(R.string.betterText);
+
+                        }
+                    });*/
+            return rootView;
+        }
+    }
 
     /**
      * A dummy fragment representing a section of the app, but that simply displays dummy text.

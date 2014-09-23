@@ -24,3 +24,8 @@ proguard/
 
 # Log Files
 *.log
+
+Android_Design_*
+glyphi*
+.idea
+*.iml
